@@ -1,0 +1,213 @@
+[hidden] {
+    display: none !important;
+}
+
+.br-system-notification {
+    width: 100%;
+    max-width: var(--auth-content-width, 500px);
+    min-height: 72px;
+    margin: 0 auto 14px;
+    padding: 14px 15px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #B42332;
+    border-radius: 8px;
+    background: #F8E9EB;
+}
+
+.br-system-notification p {
+    margin: 0;
+    color: #871A26;
+    font-family: var(--font-family, "Inter", sans-serif);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.br-submit-button[data-state="processing"] {
+    opacity: 0.65;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.br-loading-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #FFFFFF;
+    border-radius: 50%;
+
+    animation: brave-register-spin 0.75s linear infinite;
+}
+
+.br-processing-message {
+    width: 100%;
+    margin: 0;
+    color: #5F6B7A;
+    font-family: var(--font-family, "Inter", sans-serif);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+@keyframes brave-register-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body.br-modal-open {
+    overflow: hidden;
+}
+
+.br-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 100%;
+    padding: 16px;
+
+    background: rgba(9, 18, 33, 0.48);
+}
+
+.br-success-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(496px, 100%);
+    min-height: 360px;
+    padding: 32px;
+
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    text-align: center;
+}
+
+.br-success-icon-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+
+    border-radius: 50%;
+    background: #E8F2ED;
+}
+
+.br-success-icon-background svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.br-success-modal h2 {
+    width: 100%;
+    margin: 20px 0 0;
+
+    color: #172033;
+    font-family: var(--font-family, "Inter", sans-serif);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 32px;
+}
+
+.br-success-modal p {
+    width: 100%;
+    margin: 8px 0 0;
+
+    color: #5F6B7A;
+    font-family: var(--font-family, "Inter", sans-serif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.br-success-modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    min-height: 50px;
+    margin-top: auto;
+    padding: 12px 16px;
+
+    border: 0;
+    border-radius: 8px;
+    background: #2F6DAE;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+    color: #FFFFFF;
+    font-family: var(--font-family, "Inter", sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.br-success-modal-button:hover {
+    background: var(--color-primary-hover, #245B94);
+}
+
+.br-success-modal-button:active {
+    transform: translateY(1px);
+}
+
+.br-success-modal-button:focus-visible {
+    outline: 2px solid #2F6DAE;
+    outline-offset: 3px;
+}
+
+.br-success-modal-button img {
+    display: block;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 480px) {
+    .br-success-modal {
+        min-height: 340px;
+        padding: 28px 22px;
+    }
+
+    .br-success-modal h2 {
+        font-size: 22px;
+    }
+
+    .br-success-modal p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .br-loading-spinner {
+        animation-duration: 1.5s;
+    }
+
+    .br-success-modal-button {
+        transition: none;
+    }
+}

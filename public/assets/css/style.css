@@ -1,0 +1,1380 @@
+
+/* =========================================================
+   BRAVE — REGISTER PAGE
+   Main page styling
+   Figma reference: Register
+========================================================= */
+
+
+/* =========================================================
+   01. PAGE LAYOUT
+========================================================= */
+
+.br-register-page {
+    display: grid;
+    grid-template-columns:
+        minmax(0, var(--layout-left-ratio))
+        minmax(0, var(--layout-right-ratio));
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: var(--color-white);
+}
+
+
+/* =========================================================
+   02. LEFT BRANDING PANEL
+========================================================= */
+
+.br-left-panel {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.br-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    opacity: 0.48;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.br-left-inner {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding: clamp(32px, 5.47vh, 56px);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   03. BRAND LOGO
+========================================================= */
+
+.br-brand-hero {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.br-brand-lockup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.br-brand-topline {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 32px;
+
+    gap: 10px;
+}
+
+.br-brand-name {
+    display: inline-flex;
+    align-items: center;
+
+    color: var(--color-white);
+
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+    line-height: 32px;
+
+    white-space: nowrap;
+}
+
+.br-brand-university {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 16px;
+    padding-left: 10px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.32);
+
+    color: #C6D8EC;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+    line-height: 16px;
+
+    white-space: nowrap;
+}
+
+.br-brand-tagline {
+    margin-top: 0;
+
+    color: #E4EDF8;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.br-brand-logo {
+    display: block;
+
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   04. LEFT HERO CONTENT
+========================================================= */
+
+.br-hero-content {
+    width: 100%;
+    margin-top: clamp(24px, 4.3vh, 44px);
+}
+
+.br-hero-title {
+    max-width: 571px;
+
+    color: var(--color-white);
+
+    font-size: clamp(29px, 3.9vh, 40px);
+    font-weight: 700;
+
+    letter-spacing: -1.15px;
+    line-height: 1.15;
+}
+
+.br-hero-description {
+    width: 100%;
+    max-width: 540px;
+
+    margin-top: clamp(8px, 1.17vh, 12px);
+
+    color: #EAF1F9;
+
+    font-size: clamp(12px, 1.56vh, 16px);
+    font-weight: 400;
+
+    line-height: 1.625;
+}
+
+
+/* =========================================================
+   05. CAMPUS EVENT PASS CARD
+========================================================= */
+
+.br-pass-card {
+    display: flex;
+    flex-direction: column;
+
+    width: min(100%, 410px);
+
+    height: clamp(160px, 19.63vh, 201px);
+    min-height: 160px;
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    padding: clamp(16px, 2.34vh, 24px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 17px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.17),
+        rgba(255, 255, 255, 0.10)
+    );
+
+    box-shadow:
+        var(--shadow-card),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    flex-shrink: 0;
+}
+
+.br-pass-card-header {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 44px;
+
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.br-pass-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.17);
+}
+
+.br-pass-icon img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+    /* Ikon putih pada kartu biru transparan */
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.br-pass-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    gap: 2px;
+}
+
+.br-pass-eyebrow {
+    color: #C7DDF5;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+    line-height: 17px;
+}
+
+.br-pass-title {
+    color: var(--color-white);
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.br-pass-divider {
+    width: 100%;
+    height: 1px;
+    min-height: 1px;
+
+    margin: 20px 0 12px;
+
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.br-pass-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    width: 100%;
+    height: 74px;
+
+    gap: 12px;
+}
+
+.br-stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    height: 74px;
+
+    padding: 10px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+
+    background: rgba(20, 55, 91, 0.34);
+}
+
+.br-stat-number {
+    color: var(--color-white);
+
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+    line-height: 30px;
+}
+
+.br-stat-label {
+    color: #D1E1F2;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+
+/* =========================================================
+   06. LEFT FOOTER / TRUSTMARK
+========================================================= */
+
+.br-left-footer {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 32px;
+
+    margin-top: auto;
+
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.br-left-footer img {
+    width: 16px;
+    height: 16px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+
+    /* Gold accent — BRAVE */
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(71%)
+        sepia(79%)
+        saturate(652%)
+        hue-rotate(347deg)
+        brightness(99%)
+        contrast(92%);
+
+    opacity: 1;
+}
+
+.br-left-footer p {
+    color: #D9E7F6;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+
+/* =========================================================
+   07. RIGHT REGISTRATION PANEL
+========================================================= */
+
+.br-right-panel {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding:
+        clamp(24px, 4.69vh, 48px)
+        clamp(28px, 4.45vw, 64px)
+        clamp(20px, 3.9vh, 40px);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: var(--color-white);
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E1 transparent;
+}
+
+
+/* =========================================================
+   08. TOP NAVIGATION
+========================================================= */
+
+.br-top-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: var(--auth-navigation-width);
+
+    min-height: 20px;
+    margin: 0 auto;
+
+    flex-shrink: 0;
+}
+
+.br-top-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 4px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+
+    white-space: nowrap;
+}
+
+.br-top-link img {
+    width: 16px;
+    height: 16px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+
+    /* Ikon abu-abu pada navigasi putih */
+    opacity: 0.52;
+}
+
+.br-top-link:hover {
+    color: var(--color-primary);
+}
+
+.br-top-link:hover img {
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   09. RIGHT MAIN CONTENT
+========================================================= */
+
+.br-right-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    flex: 1 0 auto;
+    min-height: 0;
+}
+
+.br-auth-content {
+    width: 100%;
+    max-width: var(--auth-content-width);
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   10. FORM HEADER
+========================================================= */
+
+.br-form-header {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 5px;
+}
+
+.br-form-header h2 {
+    color: var(--color-text-primary);
+
+    font-size: clamp(24px, 3.125vh, 32px);
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+    line-height: 1.25;
+}
+
+.br-form-header p {
+    color: var(--color-text-secondary);
+
+    font-size: clamp(12px, 1.46vh, 12px);
+    font-weight: 400;
+
+    line-height: 1.525;
+}
+
+
+/* =========================================================
+   11. SUCCESS MESSAGE
+========================================================= */
+
+.br-success-message {
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+
+    margin-top: 14px;
+    padding: 12px 14px;
+
+    gap: 9px;
+
+    border: 1px solid var(--color-success-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-success-background);
+    color: var(--color-success);
+
+    font-size: 13px;
+    line-height: 20px;
+}
+
+
+/* =========================================================
+   12. REGISTRATION FORM
+========================================================= */
+
+.br-register-form {
+    width: 100%;
+    margin-top: clamp(16px, 2.73vh, 28px);
+}
+
+.br-form-fields {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: clamp(10px, 1.56vh, 16px);
+}
+
+
+/* Individual field */
+
+.br-field {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 5px;
+}
+
+
+/* Field label */
+
+.br-field-label {
+    display: block;
+
+    width: 100%;
+    min-height: 19px;
+
+    color: var(--color-text-primary);
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+.br-field-label span {
+    color: #EF4444;
+}
+
+
+/* =========================================================
+   13. INPUT COMPONENT
+========================================================= */
+
+.br-input-wrap {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: clamp(42px, 4.69vh, 48px);
+    min-height: 42px;
+}
+
+.br-input {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0 16px 0 45px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    outline: none;
+
+    background: var(--color-input-background);
+    color: var(--color-text-primary);
+
+    font-family: var(--font-family);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.br-input::placeholder {
+    color: #94A7C0;
+    opacity: 1;
+}
+
+.br-input:focus {
+    border-color: var(--color-primary);
+
+    background: var(--color-white);
+
+    box-shadow: 0 0 0 3px rgba(52, 118, 183, 0.10);
+}
+
+
+/* Input icon */
+
+.br-input-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 34px;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+.br-input-icon img {
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+
+    /* Ikon abu-abu di dalam input */
+    opacity: 0.48;
+}
+
+
+/* Password input */
+
+.br-password-input {
+    padding-right: 48px;
+}
+
+
+/* Password visibility button */
+
+.br-password-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+.br-password-toggle img {
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+
+    /* Ikon eye abu-abu */
+    opacity: 0.48;
+}
+
+.br-password-toggle:hover {
+    background: rgba(47, 109, 174, 0.05);
+}
+
+.br-password-toggle:hover img {
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   14. EMAIL HELPER
+========================================================= */
+
+.br-email-hint {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 17px;
+
+    gap: 5px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 17px;
+}
+
+.br-email-hint img {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+    object-fit: contain;
+
+    /* Ikon info biru */
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(36%)
+        sepia(25%)
+        saturate(1300%)
+        hue-rotate(176deg)
+        brightness(92%)
+        contrast(88%);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   15. PASSWORD STRENGTH
+========================================================= */
+
+.br-strength-row {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 20px;
+
+    gap: 8px;
+}
+
+.br-strength-bars {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    width: 128px;
+    height: 6px;
+
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.br-strength-bars span {
+    display: block;
+
+    width: 100%;
+    height: 6px;
+
+    border-radius: var(--radius-full);
+    background: #E2E8F0;
+
+    transition: background-color var(--transition-normal);
+}
+
+
+/* Strength text */
+
+.br-strength-text {
+    color: var(--color-text-secondary);
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 17px;
+
+    white-space: nowrap;
+}
+
+
+/* Strength levels */
+
+.br-strength-row[data-level="1"] .br-strength-bars span:nth-child(-n+1) {
+    background: #EF4444;
+}
+
+.br-strength-row[data-level="2"] .br-strength-bars span:nth-child(-n+2) {
+    background: #F59E0B;
+}
+
+.br-strength-row[data-level="3"] .br-strength-bars span:nth-child(-n+3) {
+    background: #3B82F6;
+}
+
+.br-strength-row[data-level="4"] .br-strength-bars span {
+    background: #10B981;
+}
+
+
+/* =========================================================
+   16. VALIDATION ERRORS
+========================================================= */
+
+.br-field-error {
+    width: 100%;
+    margin-top: 0;
+
+    color: var(--color-error);
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.br-input.is-invalid,
+.br-input[aria-invalid="true"] {
+    border-color: var(--color-error);
+    background: var(--color-error-background);
+}
+
+.br-input.is-invalid:focus,
+.br-input[aria-invalid="true"]:focus {
+    box-shadow: 0 0 0 3px rgba(180, 35, 50, 0.10);
+}
+
+
+/* =========================================================
+   17. SUBMIT BUTTON
+========================================================= */
+
+.br-submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: clamp(44px, 4.88vh, 50px);
+    min-height: 44px;
+
+    margin: 0;
+    padding: 0 16px;
+
+    gap: 9px;
+
+    border: 0;
+    border-radius: var(--radius-lg);
+
+    background: var(--color-primary);
+    color: var(--color-white);
+
+    box-shadow: var(--shadow-button);
+
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.br-submit-button img {
+    width: 16px;
+    height: 16px;
+
+    object-fit: contain;
+
+    /* Ikon panah putih pada tombol biru */
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.br-submit-button:hover {
+    background: var(--color-primary-hover);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.br-submit-button:active {
+    transform: translateY(1px);
+}
+
+.br-submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   18. LOGIN LINK
+========================================================= */
+
+.br-login-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    width: 100%;
+    min-height: 24px;
+    gap: 7px;
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.br-login-text {
+    color: var(--color-primary);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.br-login-text:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   19. RIGHT LEGAL FOOTER
+========================================================= */
+
+.br-right-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: var(--auth-content-width);
+
+    min-height: 45px;
+    margin: 0 auto;
+
+    gap: 5px;
+
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.br-legal-text {
+    color: var(--color-text-secondary);
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.br-legal-link {
+    color: var(--color-primary);
+}
+
+.br-copyright {
+    color: var(--color-text-muted);
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+
+/* =========================================================
+   20. SHORT DESKTOP SCREENS
+   Example: laptop viewport around 1366 x 650–800
+========================================================= */
+
+@media (min-width: 901px) and (max-height: 800px) {
+
+    .br-left-inner {
+        padding: 28px 44px;
+    }
+
+    .br-hero-content {
+        margin-top: 26px;
+    }
+
+    .br-hero-title {
+        font-size: clamp(27px, 4.1vh, 32px);
+        line-height: 1.15;
+    }
+
+    .br-hero-description {
+        margin-top: 8px;
+        font-size: clamp(11px, 1.7vh, 13px);
+        line-height: 1.5;
+    }
+
+    .br-pass-card {
+        height: 160px;
+        min-height: 160px;
+        padding: 15px;
+    }
+
+    .br-pass-card-header {
+        height: 36px;
+    }
+
+    .br-pass-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+
+    .br-pass-icon img {
+        width: 21px;
+        height: 21px;
+    }
+
+    .br-pass-title {
+        font-size: 14px;
+    }
+
+    .br-pass-divider {
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    .br-pass-stats {
+        height: 60px;
+        gap: 8px;
+    }
+
+    .br-stat-card {
+        height: 60px;
+        padding: 7px 10px;
+    }
+
+    .br-stat-number {
+        font-size: 21px;
+        line-height: 26px;
+    }
+
+    .br-stat-label {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .br-right-panel {
+        padding-top: 20px;
+        padding-bottom: 18px;
+    }
+
+    .br-form-header h2 {
+        font-size: 27px;
+    }
+
+    .br-form-header p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .br-register-form {
+        margin-top: 24px;
+    }
+
+    .br-form-fields {
+        gap: 8px;
+    }
+
+    .br-field {
+        gap: 4px;
+    }
+
+    .br-form-header {
+    gap: 8px;
+    }
+
+    .br-field-label {
+        min-height: 17px;
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    .br-input-wrap {
+        height: 42px;
+        min-height: 42px;
+    }
+
+    .br-strength-row {
+        min-height: 17px;
+    }
+
+    .br-strength-bars {
+        width: 110px;
+    }
+
+    .br-strength-text {
+        font-size: 9px;
+    }
+
+    .br-email-hint {
+        min-height: 15px;
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .br-submit-button {
+        height: 44px;
+        min-height: 44px;
+    }
+
+    .br-login-link {
+        min-height: 21px;
+    }
+
+    .br-right-footer {
+        gap: 3px;
+    }
+
+    .br-legal-text,
+    .br-copyright {
+        font-size: 9px;
+        line-height: 14px;
+    }
+}
+
+
+/* =========================================================
+   21. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .br-register-page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .br-left-panel {
+        width: 100%;
+    }
+
+    .br-left-inner {
+        min-height: 560px;
+        padding: 36px clamp(24px, 6vw, 56px);
+    }
+
+    .br-hero-content {
+        margin-top: 32px;
+    }
+
+    .br-hero-title {
+        font-size: clamp(28px, 4.5vw, 36px);
+    }
+
+    .br-pass-card {
+        width: min(100%, 460px);
+        margin-top: 48px;
+        margin-bottom: 32px;
+    }
+
+    .br-left-footer {
+        margin-top: auto;
+    }
+
+    .br-right-panel {
+        min-height: auto;
+        padding: 32px clamp(24px, 6vw, 64px);
+        overflow: visible;
+    }
+
+    .br-right-main {
+        flex: none;
+        padding: 64px 0;
+    }
+
+    .br-auth-content {
+        max-width: 500px;
+    }
+
+    .br-right-footer {
+        margin-top: 0;
+    }
+
+    .br-desktop-break {
+    display: none;
+    }
+}
+
+
+/* =========================================================
+   22. MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .br-left-inner {
+        min-height: 520px;
+        padding: 28px 20px;
+    }
+
+    .br-brand-name {
+        font-size: 20px;
+    }
+
+    .br-brand-university {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .br-hero-content {
+        margin-top: 26px;
+    }
+
+    .br-hero-title {
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .br-hero-description {
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .br-pass-card {
+        width: 100%;
+        height: auto;
+        min-height: 160px;
+
+        margin-top: 36px;
+        margin-bottom: 30px;
+
+        padding: 16px;
+    }
+
+    .br-pass-stats {
+        gap: 8px;
+    }
+
+    .br-stat-card {
+        padding: 8px;
+    }
+
+    .br-stat-number {
+        font-size: 21px;
+    }
+
+    .br-stat-label {
+        font-size: 9px;
+    }
+
+    .br-left-footer p {
+        font-size: 9px;
+    }
+
+    .br-right-panel {
+        padding: 26px 20px;
+    }
+
+    .br-top-link {
+        font-size: 10px;
+    }
+
+    .br-form-header h2 {
+        font-size: 27px;
+    }
+
+    .br-form-header p {
+        font-size: 13px;
+    }
+
+    .br-register-form {
+        margin-top: 22px;
+    }
+
+    .br-form-fields {
+        gap: 14px;
+    }
+
+    .br-legal-text,
+    .br-copyright {
+        font-size: 9px;
+    }
+
+    .br-strength-bars {
+        width: 100px;
+        gap: 4px;
+    }
+
+    .br-strength-text {
+        font-size: 9px;
+        white-space: normal;
+    }
+}
+
+
+/* =========================================================
+   23. VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .br-brand-topline {
+        gap: 6px;
+    }
+
+    .br-brand-name {
+        font-size: 18px;
+    }
+
+    .br-brand-university {
+        padding-left: 7px;
+        font-size: 7px;
+    }
+
+    .br-top-link {
+        font-size: 9px;
+    }
+
+    .br-form-header h2 {
+        font-size: 25px;
+    }
+
+    .br-strength-row {
+        gap: 6px;
+    }
+}
