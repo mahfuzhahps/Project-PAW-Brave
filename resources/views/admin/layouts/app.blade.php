@@ -42,18 +42,27 @@
             </div>
 
             <nav class="admin-nav" aria-label="Navigasi Admin">
-                <a class="admin-nav-item is-active" href="{{ route('preview.admin.dashboard') }}" aria-current="page">
+                <a
+                    class="admin-nav-item {{ request()->routeIs('preview.admin.dashboard') ? 'is-active' : '' }}"
+                    href="{{ route('preview.admin.dashboard') }}"
+                    @if (request()->routeIs('preview.admin.dashboard')) aria-current="page" @endif
+                >
                     <span class="admin-nav-icon">
                         @include('admin.partials.icon', ['name' => 'grid'])
                     </span>
                     <span>Dashboard</span>
                 </a>
-                <button class="admin-nav-item" type="button" disabled>
+
+                <a
+                    class="admin-nav-item {{ request()->routeIs('preview.admin.events.*') ? 'is-active' : '' }}"
+                    href="{{ route('preview.admin.events.index') }}"
+                    @if (request()->routeIs('preview.admin.events.*')) aria-current="page" @endif
+                >
                     <span class="admin-nav-icon">
                         @include('admin.partials.icon', ['name' => 'calendar'])
                     </span>
                     <span>Kelola Event</span>
-                </button>
+                </a>
             </nav>
         </aside>
 
