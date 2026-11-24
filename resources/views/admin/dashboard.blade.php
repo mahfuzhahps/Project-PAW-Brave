@@ -97,7 +97,7 @@
                                 </div>
                             </td>
                             <td class="event-organizer">{{ $event['organizer'] }}</td>
-                            <td class="event-date">{{ $event['date'] }}</td>
+                            <td class="event-date">{{ \Carbon\Carbon::parse($event['date'])->locale('id')->translatedFormat('j F Y') }}</td>
                             <td>
                                 <span class="admin-status admin-status-pending">
                                     <span aria-hidden="true"></span>

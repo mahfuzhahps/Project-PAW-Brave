@@ -154,3 +154,25 @@
     .admin-event-table td { font-size: 12px; }
     .admin-button-detail { min-width: 85px; gap: 8px; padding: 6px 9px; font-size: 12px; }
 }
+
+.admin-status-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0;
+}
+
+.brave-admin .admin-status-approved {
+    background-color: #e5f5eb;
+    color: #16794b;
+}
+
+.brave-admin .admin-status-rejected {
+    background-color: #fdecef;
+    color: #b42332;
+}
+
+.brave-admin .admin-status-approved > span,
+.brave-admin .admin-status-rejected > span {
+    background-color: currentColor;
+}

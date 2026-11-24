@@ -7,6 +7,27 @@
         <h1>Kelola Event</h1>
         <p>Periksa pengajuan event sebelum dipublikasikan.</p>
     </div>
+    <form
+    action="{{ route('preview.admin.events.index') }}"
+    method="GET"
+    class="admin-status-filters"
+    >
+        @foreach ([
+            'all' => 'Semua Status',
+            'pending' => 'Pending',
+            'approved' => 'Approved',
+            'rejected' => 'Rejected',
+        ] as $value => $label)
+            <button
+                type="submit"
+                name="status"
+                value="{{ $value }}"
+                class="admin-button {{ $selectedStatus === $value ? 'admin-button-primary' : 'admin-button-detail' }}"
+            >
+                {{ $label }}
+            </button>
+        @endforeach
+    </form>
     <div class="admin-table-card">
         <table class="admin-event-table">
             <thead>
@@ -20,7 +41,7 @@
             </thead>
 
             <tbody>
-                @foreach ($events as $event)
+                @forelse ($events as $event)
                     <tr>
                         <td>
                             <span class="event-title">
@@ -34,10 +55,10 @@
                             {{ $event['organizer'] }}
                         </td>
                         <td class="event-date">
-                            {{ $event['date'] }}
+                            {{ \Carbon\Carbon::parse($event['date'])->locale('id')->translatedFormat('j F Y') }}
                         </td>
                         <td>
-                            <span class="admin-status admin-status-pending">
+                            <span class="admin-status admin-status-{{ strtolower($event['status']) }}">
                                 <span aria-hidden="true"></span>
                                 {{ $event['status'] }}
                             </span>
@@ -49,7 +70,13 @@
                             </button>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="5" class="admin-table-empty">
+                            Belum ada event pada status ini.
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

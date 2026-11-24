@@ -4,24 +4,39 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Support\AdminPreviewEvents;
 
 class EventController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $events = [
-            [
-                'title' => 'Berpikir ala Data Scientist',
-                'category' => 'Seminar',
-                'organizer' => 'FILKOM UB',
-                'date' => '1 Desember 2026',
-                'status' => 'Pending'
-            ]
 
-        ];
+    $events = AdminPreviewEvents::all();
+
+        $selectedStatus = $request->query('status', 'pending');
+
+        if (!in_array($selectedStatus, ['all', 'pending', 'approved', 'rejected'], true)) {
+            $selectedStatus = 'pending';
+        }
+
+        $filteredEvents = [];
+
+        foreach ($events as $event) {
+            if (
+                $selectedStatus === 'all' ||
+                strtolower($event['status']) === $selectedStatus
+            ) {
+                $filteredEvents[] = $event;
+            }
+        }
+
+        usort($filteredEvents, function ($a, $b) {
+            return strcmp($a['date'], $b['date']);
+        });
         
         return view('admin.events.index', [
-            'events' => $events
+            'events' => $filteredEvents,
+            'selectedStatus' => $selectedStatus,
         ]);
     }
 }
