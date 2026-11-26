@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/event-tersimpan', function () {
+    return view('saved-events');
+})->name('saved-events');
