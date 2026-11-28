@@ -14,4 +14,8 @@ if (app()->environment('local')) {
 
     Route::get('/preview/admin/events', [AdminEventController::class, 'index'])
         ->name('preview.admin.events.index');
+
+    Route::get('/preview/admin/events/{id}', [AdminEventController::class, 'show'])
+    ->whereNumber('id')
+    ->name('preview.admin.events.show');
 }

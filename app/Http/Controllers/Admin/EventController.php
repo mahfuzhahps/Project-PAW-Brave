@@ -39,4 +39,22 @@ class EventController extends Controller
             'selectedStatus' => $selectedStatus,
         ]);
     }
+
+    public function show(int $id)
+    {
+        $selectedEvent = null;
+
+        foreach (AdminPreviewEvents::all() as $event) {
+            if ($event['id'] === $id) {
+                $selectedEvent = $event;
+                break;
+            }
+        }
+
+        abort_if($selectedEvent === null, 404);
+
+        return view('admin.events.show', [
+            'event' => $selectedEvent,
+        ]);
+    }
 }

@@ -64,10 +64,12 @@
                             </span>
                         </td>
                         <td>
-                            <button class="admin-button admin-button-detail"
-                                    type="button" disabled>
+                            <a
+                                href="{{ route('preview.admin.events.show', ['id' => $event['id']]) }}"
+                                class="admin-button admin-button-detail"
+                            >
                                 Detail
-                            </button>
+                            </a>
                         </td>
                     </tr>
                 @empty
